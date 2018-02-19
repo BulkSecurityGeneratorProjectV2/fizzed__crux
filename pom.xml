@@ -20,7 +20,26 @@
         <url>https://github.com/fizzed/crux</url>
         <connection>scm:git:git@github.com:fizzed/crux.git</connection>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
+    
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                            <arg>-Xlint:all</arg>
+                            <!--<arg>-Werror</arg>-->
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <modules>
         <module>crux-util</module>
