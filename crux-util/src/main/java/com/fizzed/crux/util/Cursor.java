@@ -37,6 +37,10 @@ public class Cursor {
         return new Cursor(this.offset, limit, this.before, this.after);
     }
     
+    public Cursor nextByOffsetLimit() {
+        return new Cursor(this.offset+limit, this.limit, this.before, this.after);
+    }
+    
     public Long getBefore() {
         return before;
     }
