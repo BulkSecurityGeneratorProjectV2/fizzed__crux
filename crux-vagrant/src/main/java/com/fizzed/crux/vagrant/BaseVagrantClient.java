@@ -107,7 +107,7 @@ abstract public class BaseVagrantClient implements VagrantClient {
     @Override
     public Path sshConfig(String... machineNames) throws VagrantException {
         try {
-            File tempFile = File.createTempFile("vagrant.", ".ssh-config");
+            File tempFile = Files.createTempFile("vagrant.", ".ssh-config").toFile();
             tempFile.deleteOnExit();
             Path sshConfigFile = tempFile.toPath();
             sshConfigWrite(sshConfigFile, machineNames);
